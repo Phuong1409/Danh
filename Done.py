@@ -89,7 +89,7 @@ def calculate_error(L, C, R):
 
 # === Khởi tạo PID ===
 pid = PID(kp=25, ki=0.0, kd=2)
-base_speed = 12  # tốc độ đi thẳng
+base_speed = 18  # tốc độ đi thẳng
 
 # === Loop chính ===
 print("Bắt đầu dò line 3 cảm biến (PID)...")
@@ -103,8 +103,8 @@ try:
         right_speed = base_speed + correction
 
         # Giới hạn tốc độ 0–100
-left_speed = max(0, min(100, left_speed))
-        right_speed = max(0, min(100, right_speed))
+left_speed = max(0, min(30, left_speed))
+        right_speed = max(0, min(30, right_speed))
 
         forward(left_speed, right_speed)
         time.sleep(0.01)
